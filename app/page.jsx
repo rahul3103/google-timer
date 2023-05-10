@@ -104,7 +104,7 @@ const useTimerStore = create((set, get) => ({
   decreaseTimerVal: () => set({ timerVal: parseInt(get().timerVal) - 1 }),
   startTimer: () => set({ delayVal: 1000 }),
   stopTimer: () => set({ delayVal: null }),
-  resetTimer: () => set({ timerVal: timerInitialVal }),
+  resetTimer: () => set({ timerVal: convertHMSToSeconds(timerInitialVal) }),
 }));
 
 const useInputStore = create((set) => ({
